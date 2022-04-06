@@ -8,3 +8,6 @@ edition = "2021"
 [dependencies]
 tokio = { version = "0.2", features = ["macros", "rt-threaded", "time"] }
 warp = "0.2"
+serde = { version = "1", features = ["derive"] }
+csv = "1.1"
+
