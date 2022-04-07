@@ -234,6 +234,6 @@ Link: [https://github.com/sh-soltanpour/fitness-data-exporter](https://github.co
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://linkedin.com/in/soltanpour
 
 [product-screenshot]: images/screenshot.png
