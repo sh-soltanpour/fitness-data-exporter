@@ -1,3 +1,6 @@
+use chrono::NaiveDate;
+use super::schema::daily_activity;
+
 #[derive(Queryable)]
 pub struct Activity {
     pub id: i32,
@@ -8,10 +11,6 @@ pub struct Activity {
     pub calories: i32,
 }
 
-use std::time::SystemTime;
-use chrono::{NaiveDate, NaiveDateTime};
-use diesel::data_types::{PgDate, PgTimestamp};
-use super::schema::daily_activity;
 
 #[derive(Insertable)]
 #[table_name = "daily_activity"]

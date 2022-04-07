@@ -1,17 +1,12 @@
 mod read_csv;
 
-use std::time::SystemTime;
-use diesel::{PgConnection, QueryDsl, RunQueryDsl};
-use chrono::{NaiveDate, FixedOffset, TimeZone, Utc, NaiveDateTime};
-use diesel::data_types::PgTimestamp;
+use diesel::{PgConnection, RunQueryDsl};
+use chrono::NaiveDate;
 
-use warp::{ws::WebSocket, Filter, Rejection, Reply};
 use fitness_data_exporter::{establish_connection, schema};
 use fitness_data_exporter::models::{Activity, NewActivity};
-use fitness_data_exporter::schema::daily_activity::dsl::*;
 
-#[tokio::main]
-async fn main() {
+fn main() {
     let connection = establish_connection();
     let records = read_csv::parse("src/dailyActivity_merged.csv")
         .expect("Parse csv file");
