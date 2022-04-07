@@ -6,10 +6,11 @@ use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]
 pub struct Record {
-    ActivityDate: String,
-    TotalSteps: u32,
-    TotalDistance: f32,
-    Calories: u32,
+    pub Id: String,
+    pub ActivityDate: String,
+    pub TotalSteps: i32,
+    pub TotalDistance: f32,
+    pub Calories: i32,
 }
 
 pub fn parse(file_path: &str) -> Result<(Vec<Record>), Box<dyn Error>> {

@@ -7,7 +7,11 @@ edition = "2021"
 
 [dependencies]
 tokio = { version = "0.2", features = ["macros", "rt-threaded", "time"] }
+diesel = { version = "1.4.4", features = ["postgres", "chrono"] }
 warp = "0.2"
 serde = { version = "1", features = ["derive"] }
 csv = "1.1"
+dotenv = "0.15.0"
+chrono = "0.4"
+
 
