@@ -1,6 +1,7 @@
 use chrono::NaiveDate;
 use super::schema::daily_activity;
 
+
 #[derive(Queryable)]
 pub struct Activity {
     pub id: i32,

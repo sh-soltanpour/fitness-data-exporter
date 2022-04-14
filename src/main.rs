@@ -1,14 +1,19 @@
-mod read_csv;
+#[macro_use]
+extern crate diesel;
+extern crate dotenv;
+
+mod csv;
+mod database;
 
 use diesel::{PgConnection, RunQueryDsl};
 use chrono::NaiveDate;
 
-use fitness_data_exporter::{establish_connection, schema};
-use fitness_data_exporter::models::{Activity, NewActivity};
+use database::*;
+use crate::models::{Activity, NewActivity};
 
 fn main() {
     let connection = establish_connection();
-    let records = read_csv::parse("src/dailyActivity_merged.csv")
+    let records = csv::parse("src/csv/dailyActivity_merged.csv")
         .expect("Parse csv file");
 
     for record in records {
